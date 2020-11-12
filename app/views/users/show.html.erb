@@ -10,8 +10,12 @@
   <%= @user.email %>
 </p>
 <p>
-  <strong>Fisrt Post:</strong>
-  <%= @user.microposts.first.content %>
+  <strong>Fisrt Post: </strong>
+  <%= if @user.microposts.empty?
+          "No posts yet"
+       else
+          @user.microposts.first.content
+       end%>
 </p>
 
 
